@@ -1,0 +1,341 @@
+/*
+ * Estilos CSS para Ladrillo Eco - Estética Terracota y Oliva (Cálido y Fuerte)
+ */
+
+:root {
+    /* Paleta de Colores: Terracota, Oliva y Cacao */
+    --color-primario: #B85C38; /* Terracota / Arcilla (Llamativo) */
+    --color-fondo: #FFF8F0; /* Blanco Crema Suave (Fondo principal) */
+    --color-secundario: #5F7161; /* Verde Oliva Intenso (Contraste) */
+    --color-acento: #594545; /* Marrón Cacao Profundo (Textos y Footer) */
+    --color-texto-oscuro: #333333; /* Texto principal oscuro */
+    --color-texto-claro: #ffffff; /* Blanco Puro */
+
+    /* Tipografía */
+    --fuente-principal: 'Georgia', serif; 
+    --fuente-secundaria: 'Helvetica Neue', Arial, sans-serif; 
+}
+
+/* Estilos Globales */
+body {
+    font-family: var(--fuente-secundaria);
+    background-color: var(--color-fondo); /* Fondo Blanco Crema */
+    color: var(--color-texto-oscuro);
+    line-height: 1.7; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezados y Títulos */
+h1, h2, h3, h4 {
+    font-family: var(--fuente-principal);
+    color: var(--color-primario); /* Terracota */
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: center; 
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; border-bottom: 2px solid var(--color-secundario); padding-bottom: 10px; }
+h3 { font-size: 1.5em; color: var(--color-acento); text-align: left; margin-top: 0.5em;} 
+
+p, li {
+    font-size: 1em;
+    max-width: 900px;
+    margin: 0 auto 1.5em auto;
+}
+
+/* HEADER, LOGO y NAVEGACIÓN */
+header {
+    background-color: var(--color-texto-claro); 
+    color: var(--color-texto-oscuro);
+    padding: 20px 5%; /* Menos padding arriba para centrar el logo */
+    text-align: center;
+    border-bottom: 3px solid var(--color-primario); /* Borde Terracota llamativo */
+}
+
+/* Contenedor del Logo */
+.logo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* Para alinear el logo y el texto */
+    align-items: center;
+    justify-content: space-between; /* Espacio entre logo y nav */
+}
+
+/* Estilos del Logo */
+.logo-container img {
+    max-height: 80px; /* Tamaño adecuado para el logo */
+    width: auto;
+    margin-right: 60px;
+}
+
+/* Título junto al logo (Asegura que no sea un h1 gigante) */
+.logo-text {
+    font-size: 2em; 
+    color: var(--color-acento); /* Marrón Cacao */
+    font-weight: bold;
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--color-acento); /* Marrón Cacao */
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--color-primario); /* Terracota al pasar el mouse */
+}
+
+/* Contenido Principal y Secciones */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: var(--color-texto-claro); 
+    padding: 50px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); 
+    text-align: center; 
+}
+
+section h2 {
+    margin-bottom: 30px;
+}
+
+/* Contenedor de Componentes / Impacto (Grid) */
+.componente-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+    justify-items: center; /* Centrar tarjetas */
+}
+
+/* Estilo de Tarjetas de Componentes / Impacto (Módulos) */
+.componente-card {
+    background-color: var(--color-fondo); /* Blanco Crema para el fondo de la tarjeta */
+    border-radius: 15px;
+    padding: 25px;
+    width: 100%; /* Ajustar al grid */
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left; 
+    border: 1px solid var(--color-fondo); /* Borde suave */
+}
+
+/* Estilo para la imagen dentro de la tarjeta (Cáscara de Huevo, Eucalipto, etc.) */
+.componente-card img.card-imagen {
+    width: 100%; /* CLAVE: Ocupa todo el ancho de su tarjeta padre */
+    height: 180px; 
+    object-fit: cover; /* CLAVE: Ajusta y recorta la imagen sin deformarla */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block; 
+}
+
+.componente-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
+}
+
+.componente-card p {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+
+/* Imagen Destacada de la Introducción (LADRILLO PRINCIPAL) */
+.imagen-destacada {
+    width: 100%;
+    height: 450px;
+    background-color: var(--color-acento);
+    /* RUTA LOCAL PARA IMAGEN DEL LADRILLO */
+    background-image: url('img/ladrillo.jfif'); 
+    background-size: cover; /* Asegura que la imagen cubra todo el DIV */
+    background-position: center;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Llamada a la Acción (CTA) */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primario); /* Terracota */
+    color: var(--color-texto-claro);
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px; 
+    font-weight: bold;
+    margin-top: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: var(--color-secundario); /* Verde Oliva */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el párrafo de "Oportunidad" para resaltarlo */
+.oportunidad {
+    background-color: var(--color-secundario); /* Verde Oliva */
+    color: var(--color-texto-claro); /* Texto Blanco */
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px auto;
+    font-style: italic;
+    text-align: center;
+    max-width: 90%;
+    font-weight: 500;
+}
+
+/* Estilo del Proceso (Lista ordenada) */
+#proceso {
+    text-align: left;
+}
+#proceso ol {
+    list-style-type: none;
+    counter-reset: item;
+    padding-left: 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#proceso ol li {
+    counter-increment: item;
+    margin-bottom: 40px;
+    border-left: 3px solid var(--color-primario); /* Línea Terracota */
+    padding-left: 30px;
+    position: relative;
+}
+
+#proceso ol li::before {
+    content: counter(item);
+    font-family: var(--fuente-principal);
+    font-size: 2.8em;
+    color: var(--color-primario); /* Terracota */
+    font-weight: bold;
+    margin-right: 15px;
+    display: inline-block;
+    transform: translate(-55px, -15px); 
+    background-color: var(--color-texto-claro);
+    padding: 0 10px 0 0;
+    position: absolute;
+}
+
+/* CLASE CRÍTICA PARA RESPONSIVIDAD DE IMAGENES DE PROCESO (Mezcla y Secado) */
+.img-proceso {
+    max-width: 100%; /* CLAVE: Asegura que la imagen NUNCA exceda el ancho del contenedor */
+    height: auto;    /* CLAVE: Mantiene la proporción de la imagen (la hace responsive) */
+    display: block;  
+    margin: 20px auto; /* Centra la imagen y da espacio */
+    border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Estructura para Imágenes del Proceso (DIV background) */
+.imagen-proceso {
+    width: 100%;
+    height: 250px;
+    background-color: var(--color-fondo);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- IMÁGENES DEL PROCESO (Para DIVs, usando tus archivos) --- */
+.imagen-mezcla { 
+    background-image: url('img/mezcla.jfif'); 
+} 
+.imagen-prueba { 
+    background-image: url('img/prueba.jfif'); 
+}
+
+/* --- IMÁGENES DE IMPACTO (TARJETAS - Se mantienen las de muestra por defecto) --- */
+.card-planeta { background-image: url('https://images.unsplash.com/photo-1532930777934-2e917d52f6f1?fit=crop&q=80&w=400&h=180'); }
+.card-vivienda { background-image: url('https://images.unsplash.com/photo-1560688005-d3237190e241?fit=crop&q=80&w=400&h=180'); }
+.card-empleo { background-image: url('https://images.unsplash.com/photo-1507901747805-ba626a57e62a?fit=crop&q=80&w=400&h=180'); }
+
+/* Pie de página */
+footer {
+    background-color: var(--color-acento); /* Marrón Cacao */
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--color-primario); /* Terracota en el pie de página */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--color-secundario);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1200px) {
+    /* Permitir que el grid tenga 2 columnas en pantallas medianas */
+    .componente-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column; /* Apila logo y nav en móvil */
+        align-items: center;
+    }
+    .logo-container img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+    .componente-card {
+        max-width: 100%;
+    }
+    .imagen-destacada {
+        height: 300px; /* Reduce la altura de la imagen principal en móvil */
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+}
